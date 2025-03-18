@@ -31,7 +31,7 @@ First, install **NVM (Node Version Manager)** to easily manage Node.js versions.
 
 #### **For macOS/Linux:**
 Run the following command in the terminal:
-```sh
+
 curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
 Then, restart the terminal and install Node.js:
