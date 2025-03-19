@@ -17,5 +17,51 @@
     <h1>Color Changer</h1>
     <p>The students should implement a feature that changes the background color randomly when clicked.</p>
 
+    <button type="button" id="bgButton">Change Background Color</button>
+
 </body>
 </html>
+
+<!-- JAVASCRIPT -->
+<script>
+
+    const colorButton = document.getElementById("bgButton");
+    const bgColor = document.getElementById("bodyBG");
+    // const buttonEvent = document.getElementById("bgButton");
+
+    let colorOptions = ["#b95347", "#b96abd", "#476abd", "#476a40", "#ffc047", "#454d60", "#6ea5c6"]; // All the color options
+    let colorSelected = "";
+
+    colorButton.addEventListener('click', () => randomColor(colorOptions));
+
+    // RANDOMIZES which HEX value is FIRST in the array.
+    function randomColor(colorOptions) {
+        let currentPlace = colorOptions.length;
+    
+        while (currentPlace != 0) {
+            colorSelected = Math.floor(Math.random() * currentPlace);
+            currentPlace--;
+            [colorOptions[currentPlace], colorOptions[colorSelected]] = [colorOptions[colorSelected], colorOptions[currentPlace]];
+           
+            // Updates the value of ColorSelected with the first HEX value.
+            colorSelected = colorOptions[0];
+            console.log(colorOptions);
+            console.log(colorSelected);
+            backgroundChange(colorSelected);
+        }
+    }
+    
+    // Updates the background color in accordance with the passed in HEX value.
+    function backgroundChange(colorSelected) {
+        document.body.style.backgroundColor = colorSelected;
+    }
+    
+    // DESERT RED: #b95347
+    // PURPLE-PINK: #b96abd
+    // WASHED BLUE: #476abd
+    // EMERALD GREEN: #476a40
+    // WASHED YELLOW: #ffc047
+    // GRAY BLUE: #454d60
+    // DULL CYAN: #6ea5c6
+    
+    </script>
